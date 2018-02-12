@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PinBlockLib.iml" filepath="$PROJECT_DIR$/PinBlockLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PinBlockLib.iml" filepath="$PROJECT_DIR$/.idea/PinBlockLib.iml" />
+      <module fileurl="file://C:\Users\Renat.Shakurov\AndroidStudioProjects\RetrofitTutorial-master\PinBlockLib\PinBlockLib.iml" filepath="C:\Users\Renat.Shakurov\AndroidStudioProjects\RetrofitTutorial-master\PinBlockLib\PinBlockLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Renat.Shakurov\AndroidStudioProjects\RetrofitTutorial-master\PinBlockLib\app\app.iml" filepath="C:\Users\Renat.Shakurov\AndroidStudioProjects\RetrofitTutorial-master\PinBlockLib\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinblock/pinblock.iml" filepath="$PROJECT_DIR$/pinblock/pinblock.iml" />
     </modules>
   </component>
 </project>
