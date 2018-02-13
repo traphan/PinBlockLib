@@ -176,7 +176,7 @@ public class PinLockView extends RecyclerView {
         mAdapter.setCustomizationOptions(mCustomizationOptionsBundle);
         setAdapter(mAdapter);
 
-        addItemDecoration(new ItemSpaceDecoration(mHorizontalSpacing, mHorizontalSpacing, 3, false));
+        addItemDecoration(new ItemSpaceDecoration(mHorizontalSpacing, mVerticalSpacing, 3, false));
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 

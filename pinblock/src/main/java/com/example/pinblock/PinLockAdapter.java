@@ -62,7 +62,7 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private void configureNumberButtonHolder(NumberViewHolder holder, int position) {
         if (holder != null) {
             if (position == 9) {
-                holder.mNumberButton.setVisibility(View.GONE);
+                holder.mNumberButton.setBackground(mContext.getDrawable(R.drawable.finger_icn));
             } else {
                 holder.mNumberButton.setText(String.valueOf(mKeyValues[position]));
                 holder.mNumberButton.setVisibility(View.VISIBLE);
