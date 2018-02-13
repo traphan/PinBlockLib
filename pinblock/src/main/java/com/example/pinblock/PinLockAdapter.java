@@ -14,9 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-/**
- * Created by aritraroy on 31/05/16.
- */
+
 public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int VIEW_TYPE_NUMBER = 0;
@@ -94,20 +92,27 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private void configureDeleteButtonHolder(DeleteViewHolder holder) {
         if (holder != null) {
-            if (mCustomizationOptionsBundle.isShowDeleteButton() && mPinLength > 0) {
-                holder.mButtonImage.setVisibility(View.VISIBLE);
-                if (mCustomizationOptionsBundle.getDeleteButtonDrawable() != null) {
-                    holder.mButtonImage.setImageDrawable(mCustomizationOptionsBundle.getDeleteButtonDrawable());
-                }
-                holder.mButtonImage.setColorFilter(mCustomizationOptionsBundle.getTextColor(),
-                        PorterDuff.Mode.SRC_ATOP);
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                        mCustomizationOptionsBundle.getDeleteButtonSize(),
-                        mCustomizationOptionsBundle.getDeleteButtonSize());
-                holder.mButtonImage.setLayoutParams(params);
-            } else {
-                holder.mButtonImage.setVisibility(View.GONE);
-            }
+            holder.mDeleteButton.setTextColor(mCustomizationOptionsBundle.getTextColor());
+            holder.mDeleteButton.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                    mCustomizationOptionsBundle.getTextSize());
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    mCustomizationOptionsBundle.getButtonSize(),
+                    mCustomizationOptionsBundle.getButtonSize());
+            holder.mDeleteButton.setLayoutParams(params);
+//            if (mCustomizationOptionsBundle.isShowDeleteButton() && mPinLength > 0) {
+////                holder.mButtonImage.setVisibility(View.VISIBLE);
+//                if (mCustomizationOptionsBundle.getDeleteButtonDrawable() != null) {
+////                    holder.mButtonImage.setImageDrawable(mCustomizationOptionsBundle.getDeleteButtonDrawable());
+//                }
+////                holder.mButtonImage.setColorFilter(mCustomizationOptionsBundle.getTextColor(),
+////                        PorterDuff.Mode.SRC_ATOP);
+////                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+////                        mCustomizationOptionsBundle.getDeleteButtonSize(),
+////                        mCustomizationOptionsBundle.getDeleteButtonSize());
+//////                holder.mButtonImage.setLayoutParams(params);
+//            } else {
+////                holder.mButtonImage.setVisibility(View.GONE);
+//            }
         }
     }
 
@@ -196,13 +201,12 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public class DeleteViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout mDeleteButton;
-        ImageView mButtonImage;
+        Button mDeleteButton;
+//        ImageView mButtonImage;
 
         public DeleteViewHolder(final View itemView) {
             super(itemView);
-            mDeleteButton = (LinearLayout) itemView.findViewById(R.id.button);
-            mButtonImage = (ImageView) itemView.findViewById(R.id.buttonImage);
+            mDeleteButton = (Button) itemView.findViewById(R.id.button_delete);
 
             if (mCustomizationOptionsBundle.isShowDeleteButton() && mPinLength > 0) {
                 mDeleteButton.setOnClickListener(new View.OnClickListener() {
@@ -224,28 +228,28 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     }
                 });
 
-                mDeleteButton.setOnTouchListener(new View.OnTouchListener() {
-                    private Rect rect;
-
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            mButtonImage.setColorFilter(mCustomizationOptionsBundle
-                                    .getDeleteButtonPressesColor());
-                            rect = new Rect(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
-                        }
-                        if (event.getAction() == MotionEvent.ACTION_UP) {
-                            mButtonImage.clearColorFilter();
-                        }
-                        if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                            if (!rect.contains(v.getLeft() + (int) event.getX(),
-                                    v.getTop() + (int) event.getY())) {
-                                mButtonImage.clearColorFilter();
-                            }
-                        }
-                        return false;
-                    }
-                });
+//                mDeleteButton.setOnTouchListener(new View.OnTouchListener() {
+//                    private Rect rect;
+//
+//                    @Override
+//                    public boolean onTouch(View v, MotionEvent event) {
+//                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//                            mButtonImage.setColorFilter(mCustomizationOptionsBundle
+//                                    .getDeleteButtonPressesColor());
+//                            rect = new Rect(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
+//                        }
+//                        if (event.getAction() == MotionEvent.ACTION_UP) {
+//                            mButtonImage.clearColorFilter();
+//                        }
+//                        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+//                            if (!rect.contains(v.getLeft() + (int) event.getX(),
+//                                    v.getTop() + (int) event.getY())) {
+//                                mButtonImage.clearColorFilter();
+//                            }
+//                        }
+//                        return false;
+//                    }
+//                });
             }
         }
     }

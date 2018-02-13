@@ -7,9 +7,7 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
 
-/**
- * Created by aritraroy on 10/06/16.
- */
+
 public class ResourceUtils {
 
     private ResourceUtils() {

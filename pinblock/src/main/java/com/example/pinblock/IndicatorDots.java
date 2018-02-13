@@ -17,7 +17,6 @@ import java.lang.annotation.RetentionPolicy;
  * It represents a set of indicator dots which when attached with {@link PinLockView}
  * can be used to indicate the current length of the input
  * <p>
- * Created by aritraroy on 01/06/16.
  */
 public class IndicatorDots extends LinearLayout {
 

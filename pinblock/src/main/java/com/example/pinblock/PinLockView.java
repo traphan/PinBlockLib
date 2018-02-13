@@ -13,7 +13,6 @@ import android.util.AttributeSet;
  * <p/>
  * It can also be used as dial pad for taking number inputs.
  * Optionally, {@link IndicatorDots} can be attached to this view to indicate the length of the input taken
- * Created by aritraroy on 31/05/16.
  */
 public class PinLockView extends RecyclerView {
 
@@ -177,7 +176,7 @@ public class PinLockView extends RecyclerView {
         mAdapter.setCustomizationOptions(mCustomizationOptionsBundle);
         setAdapter(mAdapter);
 
-        addItemDecoration(new ItemSpaceDecoration(mHorizontalSpacing, mVerticalSpacing, 3, false));
+        addItemDecoration(new ItemSpaceDecoration(mHorizontalSpacing, mHorizontalSpacing, 3, false));
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 

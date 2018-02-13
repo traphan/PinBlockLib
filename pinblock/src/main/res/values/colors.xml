@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#1E90FF</color>
-    <!--<color name="white">#fff</color>-->
+    <!--<color name="white">#1E90FF</color>-->
+    <color name="white">#fff</color>
 
     <color name="greyish">#aaa8a8</color>
     <color name="mine_shaft">#303030</color>
