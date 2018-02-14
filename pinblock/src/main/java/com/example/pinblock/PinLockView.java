@@ -26,7 +26,7 @@ public class PinLockView extends RecyclerView {
     private int mTextSize, mButtonSize, mDeleteButtonSize;
     private Drawable mButtonBackgroundDrawable;
     private Drawable mDeleteButtonDrawable;
-    private boolean mShowDeleteButton;
+    private boolean mShowDeleteButton, mShowScannerButton;
 
     private IndicatorDots mIndicatorDots;
     private PinLockAdapter mAdapter;
@@ -119,6 +119,13 @@ public class PinLockView extends RecyclerView {
         }
     };
 
+    private PinLockAdapter.OnScannerClickListener scannerClickListener
+            = new PinLockAdapter.OnScannerClickListener() {
+        @Override
+        public void onScannerClicked() {
+            mPinLockListener.onScannerButtonClick();
+        }
+    };
     public PinLockView(Context context) {
         super(context);
         init(null, 0);
@@ -150,6 +157,7 @@ public class PinLockView extends RecyclerView {
             mDeleteButtonDrawable = typedArray.getDrawable(R.styleable.PinLockView_keypadDeleteButtonDrawable);
             mShowDeleteButton = typedArray.getBoolean(R.styleable.PinLockView_keypadShowDeleteButton, true);
             mDeleteButtonPressedColor = typedArray.getColor(R.styleable.PinLockView_keypadDeleteButtonPressedColor, ResourceUtils.getColor(getContext(), R.color.greyish));
+            mShowScannerButton = typedArray.getBoolean(R.styleable.PinLockView_keypadShowScannerButton, true);
         } finally {
             typedArray.recycle();
         }
@@ -163,7 +171,7 @@ public class PinLockView extends RecyclerView {
         mCustomizationOptionsBundle.setDeleteButtonSize(mDeleteButtonSize);
         mCustomizationOptionsBundle.setShowDeleteButton(mShowDeleteButton);
         mCustomizationOptionsBundle.setDeleteButtonPressesColor(mDeleteButtonPressedColor);
-
+        mCustomizationOptionsBundle.setShowFingerButton(mShowScannerButton);
         initView();
     }
 
@@ -174,6 +182,7 @@ public class PinLockView extends RecyclerView {
         mAdapter.setOnItemClickListener(mOnNumberClickListener);
         mAdapter.setOnDeleteClickListener(mOnDeleteClickListener);
         mAdapter.setCustomizationOptions(mCustomizationOptionsBundle);
+        mAdapter.setOnScannerClickListener(scannerClickListener);
         setAdapter(mAdapter);
 
         addItemDecoration(new ItemSpaceDecoration(mHorizontalSpacing, mVerticalSpacing, 3, false));
@@ -369,6 +378,24 @@ public class PinLockView extends RecyclerView {
         this.mDeleteButtonPressedColor = deleteButtonPressedColor;
         mCustomizationOptionsBundle.setDeleteButtonPressesColor(deleteButtonPressedColor);
         mAdapter.notifyDataSetChanged();
+    }
+
+    /**
+     * Function show now scanner button show or not showing
+     */
+
+    public boolean isShowScannerButton() {
+        return mShowScannerButton;
+    }
+
+    /**
+     * Set showing scanner button
+     *
+     * @param mShowScannerButton the flag is show finger button now ( default show)
+     */
+
+    public void setShowScannerButton(boolean mShowScannerButton) {
+        this.mShowScannerButton = mShowScannerButton;
     }
 
     public int[] getCustomKeySet() {

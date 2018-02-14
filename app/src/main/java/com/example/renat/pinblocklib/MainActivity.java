@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         public void onPinChange(int pinLength, String intermediatePin) {
             Log.d(TAG, "Pin changed, new length " + pinLength + " with intermediate pin " + intermediatePin);
         }
+
+        @Override
+        public void onScannerButtonClick() {
+            Log.d(TAG, "Scanner button");
+        }
     };
 
     @Override

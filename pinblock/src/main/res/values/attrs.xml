@@ -12,6 +12,7 @@
         <attr name="keypadDeleteButtonSize" format="dimension" />
         <attr name="keypadShowDeleteButton" format="boolean" />
         <attr name="keypadDeleteButtonPressedColor" format="color" />
+        <attr name="keypadShowScannerButton" format="boolean" />
 
         <attr name="dotEmptyBackground" format="reference" />
         <attr name="dotFilledBackground" format="reference" />

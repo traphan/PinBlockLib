@@ -28,4 +28,8 @@ public interface PinLockListener {
      * @param intermediatePin the intermediate pin
      */
     void onPinChange(int pinLength, String intermediatePin);
+    /**
+     * Callbacks clicking button
+     */
+    void onScannerButtonClick();
 }
