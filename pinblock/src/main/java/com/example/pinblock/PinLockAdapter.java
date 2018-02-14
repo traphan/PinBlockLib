@@ -114,6 +114,10 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if (holder != null) {
             if(mCustomizationOptionsBundle.isShowFingerButton()) {
                 holder.scannerButton.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        mCustomizationOptionsBundle.getButtonSize(),
+                        mCustomizationOptionsBundle.getButtonSize());
+                holder.scannerButton.setLayoutParams(params);
             }
         }
     }

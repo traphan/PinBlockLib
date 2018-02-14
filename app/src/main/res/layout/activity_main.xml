@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         app:keypadTextColor="@color/main_diget_color"
-        app:keypadButtonSize="60dp"
+        app:keypadButtonSize="72dp"
         app:keypadShowDeleteButton="true"
         app:keypadTextSize="18dp" />
 
