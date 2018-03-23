@@ -25,7 +25,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:text="Welcome"
-        android:textColor="@color/white"
+        android:textColor="@color/blue_dots_color"
         android:textSize="34sp" />
 
     <com.example.pinblock.IndicatorDots
@@ -43,7 +43,7 @@
         android:layout_below="@id/indicator_dots"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        app:keypadTextColor="@color/white"
+        app:keypadTextColor="@color/blue_dots_color"
         app:keypadButtonSize="72dp"
         app:keypadShowDeleteButton="true"
         app:keypadTextSize="18dp" />

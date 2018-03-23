@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         //mPinLockView.enableLayoutShuffling();
 
         mPinLockView.setPinLength(4);
-        mPinLockView.setTextColor(ContextCompat.getColor(this, R.color.white));
+        mPinLockView.setTextColor(ContextCompat.getColor(this, R.color.blue_dots_color));
 
-        mIndicatorDots.setIndicatorType(IndicatorDots.IndicatorType.FILL_WITH_ANIMATION);
+        mIndicatorDots.setIndicatorType(IndicatorDots.IndicatorType.FIXED);
     }
 }

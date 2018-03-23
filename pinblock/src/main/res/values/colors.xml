@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--<color name="white">#1E90FF</color>-->
-    <color name="white">#fff</color>
+    <color name="blue_dots_color">#0070ba</color>
 
-    <color name="greyish">#2196f3</color>
+    <color name="dot_empty">#d4d7de</color>
+
+    <color name="greyish">#0070ba</color>
     <color name="mine_shaft">#303030</color>
-    <color name="main_diget_color">#1E90FF</color>
+    <color name="main_diget_color">#0070ba</color>
 </resources>

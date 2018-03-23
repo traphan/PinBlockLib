@@ -10,7 +10,7 @@
         android:id="@+id/button_delete"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:text="@string/delete_btn_text"
+        android:text=">"
         android:background="@drawable/ring"/>
 
 </LinearLayout>

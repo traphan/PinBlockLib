@@ -3,6 +3,7 @@ package com.example.pinblock;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -72,6 +73,7 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private void configureNumberButtonHolder(NumberViewHolder holder, int position) {
         if (holder != null) {
             if (position != 9) {
+                holder.mNumberButton.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "DINProBold.ttf"));
                 holder.mNumberButton.setText(String.valueOf(mKeyValues[position]));
                 holder.mNumberButton.setVisibility(View.VISIBLE);
                 holder.mNumberButton.setTag(mKeyValues[position]);
