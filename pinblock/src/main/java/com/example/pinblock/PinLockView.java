@@ -455,4 +455,9 @@ public class PinLockView extends RecyclerView {
     public void attachIndicatorDots(IndicatorDots mIndicatorDots) {
         this.mIndicatorDots = mIndicatorDots;
     }
+
+    public void setClickableFingerButton (boolean isClicable) {
+        mCustomizationOptionsBundle.setClickableFingerPrintButton(isClicable);
+    }
+
 }

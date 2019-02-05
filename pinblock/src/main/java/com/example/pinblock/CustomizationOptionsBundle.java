@@ -15,7 +15,7 @@ public class CustomizationOptionsBundle {
     private Drawable buttonBackgroundDrawable;
     private Drawable deleteButtonDrawable;
     private int deleteButtonSize;
-    private boolean showDeleteButton, showFingerButton;
+    private boolean showDeleteButton, showFingerButton, isClickable = true;
     private int deleteButtonPressesColor;
 
     public CustomizationOptionsBundle() {
@@ -91,5 +91,13 @@ public class CustomizationOptionsBundle {
 
     public void setShowFingerButton(boolean showFingerButton) {
         this.showFingerButton = showFingerButton;
+    }
+
+    public void setClickableFingerPrintButton (boolean isClickable) {
+        this.isClickable = isClickable;
+    }
+
+    public boolean isClickable() {
+        return isClickable;
     }
 }

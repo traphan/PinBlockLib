@@ -73,7 +73,7 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private void configureNumberButtonHolder(NumberViewHolder holder, int position) {
         if (holder != null) {
             if (position != 9) {
-                holder.mNumberButton.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "DINProBold.ttf"));
+//                holder.mNumberButton.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "DINProBold.ttf"));
                 holder.mNumberButton.setText(String.valueOf(mKeyValues[position]));
                 holder.mNumberButton.setVisibility(View.VISIBLE);
                 holder.mNumberButton.setTag(mKeyValues[position]);
@@ -121,6 +121,7 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         mCustomizationOptionsBundle.getButtonSize());
                 holder.scannerButton.setLayoutParams(params);
             }
+            holder.scannerButton.setClickable(mCustomizationOptionsBundle.isClickable());
         }
     }
 

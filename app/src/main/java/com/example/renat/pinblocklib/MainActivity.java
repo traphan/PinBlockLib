@@ -59,5 +59,6 @@ public class MainActivity extends AppCompatActivity {
         mPinLockView.setTextColor(ContextCompat.getColor(this, R.color.blue_dots_color));
 
         mIndicatorDots.setIndicatorType(IndicatorDots.IndicatorType.FIXED);
+
     }
 }
